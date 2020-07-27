@@ -11,6 +11,8 @@ export default ({ name }) => {
   });
 
   const calculate = () => {
+    if(data.days <= 0 || data.last <= 0 || data.current <= 0) alert('Zəhmət olmasa məlumatları düzgün daxil edin');
+
     var minus = data.current - data.last;
 
     if (minus < 0) return 0;
