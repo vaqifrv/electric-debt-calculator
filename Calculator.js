@@ -51,7 +51,7 @@ export default ({ name }) => {
                   onChange={e => {
                     setData({ ...data, last: e.target.value });
                   }}
-                  value={data.last}
+                  value={data.last || ""}
                 />
               </div>
               <div className="col-auto">
@@ -64,7 +64,7 @@ export default ({ name }) => {
                     onChange={e => {
                       setData({ ...data, current: e.target.value });
                     }}
-                    value={data.current}
+                    value={data.current || ""}
                   />
                 </div>
               </div>
@@ -78,7 +78,7 @@ export default ({ name }) => {
                     onChange={e => {
                       setData({ ...data, days: e.target.value });
                     }}
-                    value={data.days}
+                    value={data.days || ""}
                   />
                 </div>
               </div>
