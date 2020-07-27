@@ -1,0 +1,18 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+h1, p {
+  font-family: Lato;
+}
+
+#title-p{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container{
+  padding-top:20px;
+}
+
+#debt-p{
+  margin-top: 60px;
+}
