@@ -20,14 +20,21 @@ export default ({ name }) => {
     var limitedResult = 9.863 * data.days * 0.07;
 
     if (minus <= 300) {
-      setData({ ...data, limitedDebt: limitedResult.toFixed(2) });
+      setData({
+        ...data,
+        limitedDebt: limitedResult.toFixed(2),
+        debt: limitedResult.toFixed(2)
+      });
       return limitedResult.toFixed(2);
     }
 
-    var additional = ((avgUsed * data.days) - (9.863 * data.days)) * 0.11;
-      setData({ ...data, additionalDebt: additional.toFixed(2) });
-
-    return (limitedResult + additional).toFixed(2);
+    var additional = (avgUsed * data.days - 9.863 * data.days) * 0.11;
+    setData({
+      ...data,
+      limitedDebt: limitedResult.toFixed(2),
+      additionalDebt: additional.toFixed(2),
+      debt: (limitedResult + additional).toFixed(2)
+    });
   };
 
   return (
@@ -37,8 +44,7 @@ export default ({ name }) => {
           <form
             onSubmit={e => {
               e.preventDefault();
-
-              setData({ ...data, debt: calculate() });
+              calculate();
             }}
           >
             <div className="form-row align-items-center">
@@ -92,6 +98,16 @@ export default ({ name }) => {
           <p id="debt-p">
             {"Məbləğ:  "}
             <b>{data.debt} ₼</b>
+          </p>
+
+          <p>
+            <i>
+              {"Limitli:  "}
+              <b>{data.limitedDebt} ₼</b>
+              <br />
+              {"Limitsiz:  "}
+              <b>{data.additionalDebt} ₼</b>
+            </i>
           </p>
         </div>
       </div>
