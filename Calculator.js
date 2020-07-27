@@ -95,20 +95,24 @@ export default ({ name }) => {
               </div>
             </div>
           </form>
-          <p id="debt-p">
-            {"Məbləğ:  "}
-            <b>{data.debt} ₼</b>
-          </p>
+          {data.debt != 0 && (
+            <div>
+              <p id="debt-p">
+                {"Məbləğ:  "}
+                <b>{data.debt} ₼</b>
+              </p>
 
-          <p>
-            <i>
-              {"Limitli:  "}
-              <b>{data.limitedDebt} ₼</b>
-              <br />
-              {"Limitsiz:  "}
-              <b>{data.additionalDebt} ₼</b>
-            </i>
-          </p>
+              <p>
+                <i>
+                  {"Limitli:  "}
+                  <b>{data.limitedDebt} ₼</b>
+                  <br />
+                  {"Limitsiz:  "}
+                  <b>{data.additionalDebt} ₼</b>
+                </i>
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>
