@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 export default ({ name }) => {
   const [data, setData] = useState({
-    days: 20,
-    last: 5751,
-    current: 6203,
+    days: 0,
+    last: 0,
+    current: 0,
     limitedDebt: 0,
     additionalDebt: 0,
     debt: 0
