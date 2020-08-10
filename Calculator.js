@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default ({ name }) => {
+export default () => {
   const [data, setData] = useState({
     days: 0,
     last: 0,
